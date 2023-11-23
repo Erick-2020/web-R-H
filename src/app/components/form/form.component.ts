@@ -35,12 +35,14 @@ export class FormComponent implements OnInit {
         .post('https://formsubmit.co/ajax/d97cb25c1259d598d03f75a1bcf0100a', formData)
         .subscribe(
           (response) => {
-            console.log('Correo enviado correctamente', response);
+            // console.log('Correo enviado correctamente', response);
+            alert('¡Correo enviado exitosamente!');
             this.contactForm.reset(); // Restablecer los valores del formulario a un estado inicial
             this.formSubmitted = false; // Restablecer el estado de formSubmitted a false
           },
           (error) => {
-            console.error('Error al enviar el correo', error);
+            alert('¡No se pudo enviar el correo!');
+            // console.error('Error al enviar el correo', error);
             // Manejar el error en caso de fallo en el envío
             this.formSubmitted = false; // Restablecer el estado de formSubmitted a false en caso de error
           }
