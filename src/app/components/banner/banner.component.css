@@ -1,0 +1,160 @@
+section {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    min-height: 100vh;
+    --color: #ffffff;
+    background-image: url('../../../img/caballos.jpg');
+}
+
+.wrapper {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(1px);
+    z-index: 211;
+    background-color: #00000070;
+    }
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    }
+
+.content {
+    text-align: center;
+    margin-bottom: 20px;
+    }   
+
+.title{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.main-title {
+    color: #a6df9f;
+    font-size: 60px;
+    font-weight: 700;
+    }
+
+.slogan {
+    margin-top: 20px;
+    font-size: 28px;
+    font-weight: 700;
+    color: #78f3ab;
+    }
+
+.description {
+    font-size: 18px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-top: 20px;
+    max-width: 860px;
+    }
+
+.content-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    }
+
+.content-buttons a {
+    --color: #fdfdfd;
+    padding: 0.8em 1.7em;
+    background-color: transparent;
+    border-radius: .3em;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: .5s;
+    font-weight: 400;
+    font-size: 17px;
+    border: 1px solid;
+    font-family: inherit;
+    text-transform: uppercase;
+    color: var(--color);
+    z-index: 1;
+    }
+
+.content-buttons a:hover {
+    color: #000;
+    }
+    
+.animate-button::after, .animate-button::before {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border-radius: 50%;
+    z-index: -1;
+    background-color: var(--color);
+    transition: .8s ease;
+    }
+    
+a::before {
+    top: -1em;
+    left: -1em;
+    }
+
+a::after {
+    left: calc(100% + 1em);
+    top: calc(100% + 1em);
+    }
+
+a:hover::before, a:hover::after {
+    height: 410px;
+    width: 410px;
+    }
+
+a:hover {
+    color: rgb(10, 25, 30);
+    }
+
+a:active {
+    filter: brightness(.8);
+    }
+
+@media (max-width: 991px) {
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0 20px;
+        }
+
+    .title {
+        line-height: 20px;
+        }
+
+    .main-title {
+        font-size: 16px;
+        }
+    
+    .subtitle {
+        font-size: 14px;
+        }
+    
+    .description {
+        font-size: 12px;
+        margin-top: 0;
+        }
+    
+    .content-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        }
+
+    .content-buttons a {
+        padding: 0.8em 1.7em;
+        font-size: 13px;
+        }
+    }

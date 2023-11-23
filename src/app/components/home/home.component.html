@@ -1,0 +1,19 @@
+<body>
+    <!-- código para capturar el evento de desplazamiento y realizar el desplazamiento suave -->
+    <app-header (scrollEvent)="scrollToComponent($event)"></app-header>
+
+    <section id="inicio">
+        <app-banner (scrollEvent)="scrollToComponent($event)"></app-banner>
+    </section>
+
+
+    <section id="alquiler">
+        <app-fincasalquiler (scrollEvent)="scrollToComponent($event)"></app-fincasalquiler>
+    </section>
+
+    <section id="contact">
+        <app-contact (scrollEvent)="scrollToComponent($event)"></app-contact>
+    </section>
+
+    <app-footer></app-footer>
+</body>

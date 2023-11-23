@@ -1,0 +1,38 @@
+<section>
+    <div class="titulos">
+        <h2>fincas</h2>
+    </div>
+    <div class="descripcion">
+        <p>Descubre un mundo de opciones ¡comienza a explorar y sumérgete en la belleza de nuestras fincas en Villeta Cundinamarca!</p>
+    </div>
+    <div class="container">
+        <div class="buscador">
+            <app-fincas-buscador (searchEvent)="onSearch($event)"></app-fincas-buscador>
+        </div>
+        <!-- Bucle *ngFor para recorrer la lista de fincas y crear una tarjeta por cada uno / fadeIn es el llamado a la animación
+        definida en el .ts -->
+        <div *ngFor="let finca of (filteredFincas || fincas) | slice:0:visibleCardsCount" class="card" [@fadeIn]>            <!-- Encabezado de la tarjeta -->
+            <div class="card-img">
+                <a [href]="finca.link" target="_blank">
+                    <img [src]="finca.image" [alt]="finca.alt" class="project-image">
+                </a>
+            </div>
+            <!-- Cuerpo de la tarjeta -->
+            <div class="card-body">
+                <h3 class="project-title">{{ finca.title }}</h3>
+                <p class="project-description">{{ finca.description }}</p>
+                <div class="project-precio">
+                    <span *ngFor="let tag of finca.precio" class="tag">{{ tag }}</span>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a [href]="finca.link" target="_blank" class="btn">Ver Finca</a>
+            </div>
+        </div>
+    </div>
+    <!-- Contenedor del botón "Cargar más" -->
+    <div class="content-button" *ngIf="visibleCardsCount < fincas.length">
+        <!-- Botón "Cargar más" -->
+        <a class="animate-button" (click)="loadMoreCards()">Cargar más</a>
+    </div>
+</section>
