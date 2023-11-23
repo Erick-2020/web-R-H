@@ -102,9 +102,9 @@ export class FincasalquilerComponent {
       },
       {
           title: 'FINCA CUNE CASA SAN JOSE',
-          description: 'Hermosa finca moderna y campestre, cuenta con 3 habitaciones, sala, comedor, cocina, piscina, jacuzzi, BBQ, billar y bolirrana de juegos, parqueadero y amplias zonas verdes.',
+          description: 'Hermosa finca amplia y campestre, cuenta con 6 habitaciones familiares capacidad máxima de 61 personas, piscina, Jacuzzi, zona BBQ, parqueadero, canchas te tejo, cancha de fútbol y amplias zonas verdes.',
           image: '../../../assets/img/mayor.jpg',
-          precio: ['$80.000 x Persona', '$50.000 Aseo'],
+          precio: ['$80.000 x Persona', '$100.000 Aseo'],
           link: 'https://photos.app.goo.gl/aC4SBNjsVe6gm8bL8',
           alt: 'Finca Cune Casa San Jose',
       },
