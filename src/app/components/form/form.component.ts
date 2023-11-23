@@ -1,7 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import swal from 'sweetalert';
+import Swal from 'sweetalert2'
+
+  // CommonJS
+
 
 @Component({
   selector: 'app-form',
@@ -37,12 +40,12 @@ export class FormComponent implements OnInit {
         .subscribe(
           (response) => {
             // console.log('Correo enviado correctamente', response);
-            swal("CORRECTO!", "Correo enviado!", "success");
+            Swal.fire("CORRECTO!", "Correo enviado!", "success");
             this.contactForm.reset(); // Restablecer los valores del formulario a un estado inicial
             this.formSubmitted = false; // Restablecer el estado de formSubmitted a false
           },
           (error) => {
-            swal("ALGO FALLO!", "Error al enviar el correo!", "error");
+            Swal.fire("ALGO FALLO!", "Error al enviar el correo!", "error");
             // console.error('Error al enviar el correo', error);
             // Manejar el error en caso de fallo en el envío
             this.formSubmitted = false; // Restablecer el estado de formSubmitted a false en caso de error
