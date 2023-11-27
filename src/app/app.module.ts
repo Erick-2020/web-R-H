@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { FincasBuscadorComponent } from './components/fincas-buscador/fincas-buscador.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { FincasventaComponent } from './components/fincasventa/fincasventa.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormComponent,
     FincasBuscadorComponent,
     FooterComponent,
+    FincasventaComponent,
   ],
   imports: [
     BrowserModule,
