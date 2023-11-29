@@ -1,5 +1,5 @@
 <div class="search-box">
-    <input type="text" [(ngModel)]="searchTerm" (keyup.enter)="onSearch()" placeholder="Buscar...">
+    <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" (keyup.enter)="onSearch()" placeholder="Buscar...">
     <button (click)="onSearch()">
         <i class="fa fa-search"></i>
     </button>

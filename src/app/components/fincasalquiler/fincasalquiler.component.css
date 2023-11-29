@@ -25,8 +25,8 @@ section {
     font-family: 'Poppins';
     color: rgb(15, 15, 15);
     width: 360px;
+    text-transform: uppercase;
     text-align: center;
-    border-bottom: 2px solid rgb(0, 0, 0);
     }
 
 .descripcion {

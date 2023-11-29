@@ -1,5 +1,5 @@
 <mat-toolbar color="primary" [ngClass]="{ 'navbar-scrolled': navbarScrolled }" #navbar>
-    <a mat-button (click)="scrollToComponent('inicio')" class="logo"><img class="logo-img" src=""></a>
+    <a mat-button (click)="scrollToComponent('inicio')" class="logo"><img class="logo-img" [src]="logo"></a>
     <div class="spacer"></div>
     <div class="menu-container" [class.open]="menuOpen">
         <a mat-button (click)="scrollToComponent('alquiler')">

@@ -8,6 +8,7 @@ import { Component, HostListener, ElementRef, Output, EventEmitter } from '@angu
 export class HeaderComponent {
   menuOpen = false;
   navbarScrolled: boolean = false;
+  logo: string = '../../../assets/img/logo.webp';
 
   constructor(private elementRef: ElementRef) {}
   // Esto bloque es para para emitir el identificador del elemento al que se desea desplazar en lugar del elemento en sí
