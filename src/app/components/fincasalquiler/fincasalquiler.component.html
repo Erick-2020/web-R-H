@@ -27,6 +27,8 @@
             </div>
             <div class="card-footer">
                 <a [href]="finca.link" target="_blank" class="btn">Ver Finca</a>
+                <a *ngIf="finca.link2 && finca.link2.trim() !== ''" [href]="finca.link2" target="_blank" class="btn" (click)="confirmarSalida($event, finca.link2)">Reservar Airbnb</a>
+
             </div>
         </div>
     </div>
@@ -34,5 +36,5 @@
     <div class="content-button" *ngIf="visibleCardsCount < fincas.length">
         <!-- Botón "Cargar más" -->
         <a class="animate-button" (click)="loadMoreCards()">Cargar más</a>
-    </div>
+    </div>   
 </section>

@@ -1,0 +1,18 @@
+.reserva {
+    display: flexbox;
+    background-color: #125e31;
+    color: white;
+    font-size: 14px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: .2s;
+    margin-right: 1px;
+    margin-left: 1px;
+    text-align: center;
+    justify-content: center;
+    position: fixed;
+    top: 85vh;
+    left: 10px;
+    width: 200px;
+}
