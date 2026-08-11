@@ -217,9 +217,9 @@ export class FincasalquilerComponent {
       {
           title: 'CASA CENTRO',
           description: 'Disponible esta hermosa casa quinta, con capacity máxima de 15 personas, cuenta with 3 habitaciones, sala, comedor, cocina, pisicna, jacuzzi, asador y parqueadero.',
-          image: '../../../assets/img/c-centro.webp',
+          image: '../../../assets/img/c-centro.jpg',
           precio: ['$90.000 x 💁‍♂️', '$50.000 🚽🧽', '15 👪'],
-          link: 'https://photos.app.goo.gl/K3g2WHMip1jawwCz8',
+          link: 'https://photos.app.goo.gl/vdEDRiyLMPeFrPGw8',
           alt: 'Casa Centro',
       },
       {
