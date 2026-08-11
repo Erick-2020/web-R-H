@@ -78,14 +78,6 @@ export class FincasalquilerComponent {
 
       // Lista de proyectos
       fincas: Fincas[] = [
-      //   {
-      //     title: 'FINCA DOS MADEROS',
-      //     description: 'Finca campestre ubicada a 10 metros de Villeta; Cuenta con 2 habitaciones, 1 cabaña, sala y sala de estar, comedor, cocina, piscina, jacuzzi y zona BBQ',
-      //     image: '../../../assets/img/',
-      //     precio: ['$120.000 x 💁‍♂️', '$50.000 🚽🧽', '10 👪'],
-      //     link: '',
-      //     alt: 'Finca Dos Maderos',
-      // },
       {
           title: 'FINCA DOS MADEROS 2',
           description: 'Finca ubicada a 10 minutos del centro de Villeta cuenta con 5 habitaciones, sala, comedor, cocina, piscina, juegos, pimpón, billar, cancha de fútbol.',
@@ -102,6 +94,15 @@ export class FincasalquilerComponent {
           link: 'https://photos.app.goo.gl/FaJPE1SVoZzLze5cA',
           link2: 'https://www.airbnb.com.co/',
           alt: 'Finca Cond 5 Estrellas',
+      },
+      {
+          title: 'FINCA COND 5 ESTRELLAS 2',
+          description: 'Hermosa finca en condominio cerrado; cuenta con 6 habitaciones, sala, comedor, cocina, amplias zonas verdes, parqueadero, piscina y zona BBQ',
+          image: '../../../assets/img/estrellas-2.JPG',
+          precio: ['$100.000 x 💁‍♂️', '$50.000 🚽🧽', '13 👪'],
+          link: 'https://photos.app.goo.gl/2W2i3wn6y1UtCHGG9',
+          link2: 'https://www.airbnb.com.co/',
+          alt: 'Finca Cond 5 Estrellas 2',
       },
       {
           title: 'FINCA PRIMAV PAYANDE 3',
