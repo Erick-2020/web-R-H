@@ -16,3 +16,8 @@
     left: 10px;
     width: 200px;
 }
+.reserva:hover {
+    background-color: #0e4a26;
+    color: white;
+    text-decoration: none;
+}
