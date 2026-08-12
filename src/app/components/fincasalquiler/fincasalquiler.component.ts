@@ -2,6 +2,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import Swal from 'sweetalert2';
 
+
 interface Fincas {
   title: string;
   description: string;
@@ -9,6 +10,7 @@ interface Fincas {
   precio: string[];
   link: string;
   link2?: string; // Propiedad opcional para el segundo enlace
+  fotos?: string[]; // Propiedad opcional para las fotos
   alt: string;
 }
 
@@ -26,7 +28,9 @@ interface Fincas {
   ],
 })
 
+
 export class FincasalquilerComponent {
+
     // Cantidad inicial de tarjetas visibles
     visibleCardsCount = 12;
     // Cantidad de tarjetas a agregar al hacer clic en "Cargar más"
@@ -38,6 +42,61 @@ export class FincasalquilerComponent {
         this.visibleCardsCount += this.cardsIncrement;
       }, 200);
     }
+
+    //GALLERY DE FOTOS
+    fincaSeleccionada: any = null;
+    mostrarGaleria = false;
+    fotoActual = 0;
+
+    abrirGaleria(finca: any): void {
+      this.fincaSeleccionada = finca;
+      this.fotoActual = 0;
+      this.mostrarGaleria = true;
+
+      //OCULTAR EL SCROLL DE LA PAGINA CUANDO SE ABRE LA GALERIA
+      document.body.style.overflow = 'hidden';
+    }
+
+    cerrarGaleria(): void {
+      this.mostrarGaleria = false;
+      this.fincaSeleccionada = null;
+
+      //MOSTRAR EL SCROLL DE LA PAGINA CUANDO SE CIERRA LA GALERIA
+      document.body.style.overflow = '';
+
+    }
+
+    siguienteFoto(): void {
+
+  if (!this.fincaSeleccionada?.fotos?.length) {
+    return;
+  }
+
+  this.fotoActual++;
+
+  if (this.fotoActual >= this.fincaSeleccionada.fotos.length) {
+    this.fotoActual = 0;
+  }
+}
+
+anteriorFoto(): void {
+
+  if (!this.fincaSeleccionada?.fotos?.length) {
+    return;
+  }
+
+  this.fotoActual--;
+
+  if (this.fotoActual < 0) {
+    this.fotoActual = this.fincaSeleccionada.fotos.length - 1;
+  }
+}
+
+
+
+
+
+
 
   @Output() scrollEvent = new EventEmitter<string>();
   
@@ -76,6 +135,7 @@ export class FincasalquilerComponent {
       });
     }
 
+
       // Lista de proyectos
       fincas: Fincas[] = [
       {
@@ -83,7 +143,31 @@ export class FincasalquilerComponent {
           description: 'Finca ubicada a 10 minutos del centro de Villeta cuenta con 5 habitaciones, sala, comedor, cocina, piscina, juegos, pimpón, billar, cancha de fútbol.',
           image: '../../../assets/img/maderos-2.webp',
           precio: ['$130.000 x 💁‍♂️', '$50.000 🚽🧽', '20 👪'],
-          link: 'https://photos.app.goo.gl/pb1cSR2L2FSpmUh76',
+          link: 'https://photos.app.goo.gl/FaJPE1SVoZzLze5cA',
+           fotos: [
+            'assets/img/FINCA COND 5 ESTRELLAS 2/1.JPG',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/2.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/3.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/4.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/5.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/6.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/7.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/8.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/9.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/10.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/11.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/12.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/13.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/14.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/15.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/16.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/17.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/18.JPG',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/19.JPG',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/20.JPG',
+          ],
+
+
           alt: 'Finca Dos Maderos 2',
       },
       {
@@ -93,6 +177,28 @@ export class FincasalquilerComponent {
           precio: ['$130.000 x 💁‍♂️', '$50.000 🚽🧽', '16 👪'],
           link: 'https://photos.app.goo.gl/FaJPE1SVoZzLze5cA',
           link2: 'https://www.airbnb.com.co/',
+          fotos: [
+            'assets/img/FINCA COND 5 ESTRELLAS 2/1.JPG',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/2.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/3.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/4.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/5.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/6.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/7.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/8.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/9.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/10.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/11.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/12.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/13.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/14.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/15.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/16.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/17.jpg',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/18.JPG',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/19.JPG',
+            'assets/img/FINCA COND 5 ESTRELLAS 2/20.JPG',
+          ],
           alt: 'Finca Cond 5 Estrellas',
       },
       {

@@ -200,6 +200,220 @@ section {
     filter: brightness(.8);
     }
 
+
+
+/*CSS GALLERY DE FOTOS*/
+.galeria-overlay {
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 99999;
+
+    padding: 20px;
+
+    /* Evita que el contenido se salga */
+    overflow: hidden;
+}
+
+.galeria {
+    position: relative;
+
+    width: 100%;
+    max-width: 1200px;
+
+    max-height: 95vh;
+
+    background: #fff;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    padding: 25px;
+
+    box-sizing: border-box;
+
+    /* IMPORTANTE SCROOLL*/
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.galeria-header {
+    text-align: center;
+}
+
+.galeria-header h2 {
+    margin: 0 0 20px;
+}
+
+
+.galeria-cerrar {
+    position: absolute;
+
+    right: 15px;
+    top: 15px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.7);
+
+    color: white;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+    z-index: 5;
+}
+
+
+.foto-container {
+    position: relative;
+
+    width: 100%;
+
+    height: 65vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #111;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+.foto-container img {
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+
+.flecha {
+    position: absolute;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 50px;
+    height: 50px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(0,0,0,.6);
+
+    color: white;
+
+    font-size: 40px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+
+.flecha.izquierda {
+    left: 20px;
+}
+
+
+.flecha.derecha {
+    right: 20px;
+}
+
+
+.contador {
+    text-align: center;
+
+    margin: 12px 0;
+
+    font-weight: bold;
+}
+
+
+.miniaturas {
+    display: flex;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    padding: 10px 0;
+}
+
+
+.miniaturas img {
+    width: 80px;
+    height: 60px;
+
+    object-fit: cover;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    opacity: .6;
+}
+
+
+.miniaturas img.activa {
+    opacity: 1;
+
+    outline: 3px solid #198754;
+}
+
+
+
+
+/* CSS GALLERY DE FOTOS PARA EL CEL */
+
+@media (max-width: 768px) {
+
+    .galeria {
+        width: 100%;
+        height: 95vh;
+        padding: 15px;
+    }
+
+    .foto-container {
+        height: 65vh;
+    }
+
+    .miniaturas img {
+        width: 65px;
+        height: 50px;
+    }
+
+    .flecha {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+
+}
+
+
+
+
+/*FIN GALLERY DE FOTOS*/
+
 @media (max-width: 991px) {
     section {
         padding: 40px 15px;

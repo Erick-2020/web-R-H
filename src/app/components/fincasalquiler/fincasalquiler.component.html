@@ -26,12 +26,98 @@
                 </div>
             </div>
             <div class="card-footer">
-                <a [href]="finca.link" target="_blank" class="btn">Ver Finca</a>
+                 <button class="btn" (click)="abrirGaleria(finca)">Ver Finca</button>
                 <a *ngIf="finca.link2 && finca.link2.trim() !== ''" [href]="finca.link2" target="_blank" class="btn" (click)="confirmarSalida($event, finca.link2)">Reservar Airbnb</a>
 
             </div>
-        </div>
+        </div>        
     </div>
+
+
+    <!-- Modal para mostrar la galería de fotos -->
+    <div 
+    class="galeria-overlay"
+    *ngIf="mostrarGaleria"
+    (click)="cerrarGaleria()">
+
+        <div 
+            class="galeria"
+            (click)="$event.stopPropagation()">
+
+            <!-- CERRAR -->
+            <button 
+                class="galeria-cerrar"
+                (click)="cerrarGaleria()">
+                ×
+            </button>
+
+
+            <!-- TITULO -->
+            <div class="galeria-header">
+
+                <h2>
+                    {{ fincaSeleccionada?.title }}
+                </h2>
+
+            </div>
+
+
+            <!-- FOTO PRINCIPAL -->
+            <div class="foto-container">
+
+                <button 
+                    class="flecha izquierda"
+                    (click)="anteriorFoto()">
+                    ‹
+                </button>
+
+
+                <img
+                    [src]="fincaSeleccionada?.fotos[fotoActual]"
+                    [alt]="fincaSeleccionada?.title">
+
+
+                <button 
+                    class="flecha derecha"
+                    (click)="siguienteFoto()">
+                    ›
+                </button>
+
+            </div>
+
+
+            <!-- CONTADOR -->
+
+            <div class="contador">
+
+                {{ fotoActual + 1 }} /
+                {{ fincaSeleccionada?.fotos.length }}
+
+            </div>
+
+
+            <!-- MINIATURAS -->
+
+            <div class="miniaturas">
+
+                <img
+                    *ngFor="let foto of fincaSeleccionada?.fotos; let i = index"
+                    [src]="foto"
+                    [class.activa]="i === fotoActual"
+                    (click)="fotoActual = i">
+
+            </div>
+            
+            <div>
+                <a rel="noopener noreferrer" class="btn" [href]="fincaSeleccionada.link"  target="_blank"> 📷 Ver fotos en Google Fotos</a>
+                
+            
+            </div>        
+
+        </div>
+
+    </div>
+    
     <!-- Contenedor del botón "Cargar más" -->
     <div class="content-button" *ngIf="visibleCardsCount < fincas.length">
         <!-- Botón "Cargar más" -->
