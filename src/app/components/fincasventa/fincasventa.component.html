@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class="card-footer">
-                    <a [href]="finca.link" target="_blank" class="btn">Ver Finca</a>
+                    <a [href]="finca.link" aria-label="Ver finca" target="_blank" class="btn">Ver Finca</a>
                 </div>
             </div>
     </div>
@@ -34,7 +34,7 @@
     <!-- EL BOTON SOLO APARECERA CUANDO HAYAN MAS DE LAS FINCAS VISIBLES ESTABLECIDAS -->
     <div class="content-button" *ngIf="visibleCardsCount < fincas.length">
         <!-- Botón "Cargar más" -->
-        <a class="animate-button" (click)="loadMoreCards()">Cargar más</a>
+        <a class="animate-button" aria-label="Cargar más" (click)="loadMoreCards()">Cargar más</a>
     </div>
     <br><br>
 </div>

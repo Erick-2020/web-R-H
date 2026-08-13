@@ -1,6 +1,6 @@
 <div class="search-box">
     <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="onSearch()" (keyup.enter)="onSearch()" placeholder="Buscar...">
-    <button (click)="onSearch()">
+    <button aria-label="Buscar fincas" (click)="onSearch()">
         <i class="fa fa-search"></i>
     </button>
 </div>
